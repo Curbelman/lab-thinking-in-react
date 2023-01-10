@@ -1,10 +1,16 @@
-function ProductRow () {
+function ProductRow (props) {
+    const { products } = props;
+
     return (
-        <tr>
-            <td>Name</td>
-            <td>Price</td>
-        </tr>
-    )
+        products.forEach((product) => {
+         <tbody>
+            <tr>
+             <td>{product.name}</td>
+             <td>{product.price}</td>
+            </tr>
+         </tbody>
+        })
+    );
 }
 
 export default ProductRow;

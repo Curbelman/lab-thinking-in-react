@@ -1,17 +1,19 @@
 import ProductRow from "./ProductRow";
 
-function ProductTable () {
+function ProductTable (props) {
+    const { products } = props;
+    
+ return (
     <table>
         <thead>
-        <tr>
-            <th>Name</th>
-            <th>Price</th>
-        </tr>
+            <tr>
+             <th>Name</th>
+             <th>Price</th>
+            </tr>
         </thead>
-        <tbody>
-            <ProductRow />
-        </tbody>
+            <ProductRow products={products}/>
     </table>
+ )
 }
 
 export default ProductTable;
