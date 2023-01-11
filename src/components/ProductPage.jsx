@@ -6,23 +6,22 @@ import ProductTable from "./ProductTable";
 function ProductPage () {
     const [products] = useState(jsonData);
     const productsCopy = [...products];
-    const [filteredProducts, setFilteredProducts] = useState("");
+    const [filterText, setFilterText] = useState("");
+    const [shownProducts, setShownProducts] = useState("");
 
-    let filteredProductsArray = productsCopy.filter((product) => {
-        return product.name.toLowerCase().includes(filteredProducts)
+    let filteredProducts = productsCopy.filter((product) => {
+        return product.name.toLowerCase().includes(filterText)
     })
 
-    function handleSearch(searchTerm) {
-        if (searchTerm.length>0){
-            setFilteredProducts(filteredProductsArray);
-            }
-        };
+    function handleSearch() {
+        setFilterText(filteredProducts);
+    }
     
     return(
         <div>
             <h1>IronStore</h1>
-            <SearchBar setFilteredProducts={setFilteredProducts} handleSearch={handleSearch}/>
-            <ProductTable products={filteredProductsArray}/>
+            <SearchBar setFilterText={setFilterText} handleSearch={handleSearch}/>
+            <ProductTable products={filteredProducts}/>
         </div>
     )
 }
