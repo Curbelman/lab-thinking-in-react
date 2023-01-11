@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 function SearchBar (props) {
-    const { setFilterText, handleSearch } = props;
+    const { setFilterText } = props;
     const [searchTerm, setSearchTerm] = useState("");
 
     const handleChange = (event) => {
@@ -19,7 +19,7 @@ function SearchBar (props) {
             onChange={(event) => {
                 handleChange(event);
                 setFilterText(searchTerm);
-                handleSearch();
+                //handleSearch();
                 }
               }/>
         </div>  

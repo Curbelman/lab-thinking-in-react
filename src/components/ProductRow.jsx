@@ -6,7 +6,7 @@ function ProductRow (props) {
     //const [inStock] = products.inStock;
 
     return (
-        products.map((eachProduct, i) => {
+        products.map((eachProduct) => {
             return(
                 <tbody>
                  <tr key={uuid()}>

@@ -7,20 +7,20 @@ function ProductPage () {
     const [products] = useState(jsonData);
     const productsCopy = [...products];
     const [filterText, setFilterText] = useState("");
-    const [shownProducts, setShownProducts] = useState("");
+    
 
     let filteredProducts = productsCopy.filter((product) => {
         return product.name.toLowerCase().includes(filterText)
     })
 
-    function handleSearch() {
-        setFilterText(filteredProducts);
-    }
+    // function handleSearch() {
+    //     setFilterText(filteredProducts);
+    // }
     
     return(
         <div>
             <h1>IronStore</h1>
-            <SearchBar setFilterText={setFilterText} handleSearch={handleSearch}/>
+            <SearchBar setFilterText={setFilterText} />
             <ProductTable products={filteredProducts}/>
         </div>
     )
